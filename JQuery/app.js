@@ -67,15 +67,18 @@ $(document).ready(function () {
     });
 
     // Example Six
+    let counter = 0;
+
     $("#friendButton").click(function () {
         const friends = ["Kelsie", "Kelsey", "Paxton", "JT", "Aaron", "Rachel", "James", "Julian", "Dorian", "Piers"]
-        for (i = 0; i < friends.length; i++) {
-            let friend = friends[i];
+        if (counter == 10) {
+            return;
+        } else {
+            let friend = friends[counter];
             let newItem = $("<li></li>");
             newItem.text(friend);
-
             $("#friendList").append(newItem);
+            counter++;
         };
     });
-
 });

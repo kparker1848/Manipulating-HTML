@@ -65,12 +65,17 @@ let sixBtn = document.getElementById("exSixBtn");
 sixBtn.textContent = "Add Friend";
 let sixList = document.getElementById("exSixList");
 
+let counter = 0;
+
 sixBtn.addEventListener("click", function () {
     const friends = ["Kelsie", "Kelsey", "Aaron", "JT", "Paxton", "James", "Rachel", "Julian", "Dorian", "Piers"];
-    for (i = 0; i < friends.length; i++) {
-        let friend = friends[i];
+    if (counter == 10) {
+        return;
+    } else {
+        let friend = friends[counter];
         let listItem = document.createElement("li");
         listItem.textContent = friend;
         sixList.appendChild(listItem);
+        counter++;
     };
 });
